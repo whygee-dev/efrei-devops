@@ -7,5 +7,5 @@ steps:
         "europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app",
         ".",
       ]
-  - images:
+    images:
       - europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app
