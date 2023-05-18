@@ -4,7 +4,6 @@ RUN apk add --no-cache libc6-compat openssl1.1-compat
 WORKDIR /app
 
 COPY prisma ./
-COPY .env ./.env
 COPY package.json yarn.lock* ./
 
 RUN \
