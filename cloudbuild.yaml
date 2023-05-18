@@ -4,7 +4,7 @@ steps:
     args:
       - -c
       - |
-        docker build -t europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app --build-arg DATABASE_URL=$$DATABASE_URL --build-arg DISCORD_CLIENT_ID=$$DISCORD_CLIENT_ID --build-arg DISCORD_CLIENT_SECRET=$$DISCORD_CLIENT_SECRET --build-arg NEXTAUTH_SECRET=$$NEXTAUTH_SECRET .
+        docker build -t europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app --build-arg DATABASE_URL=$$DATABASE_URL --build-arg DISCORD_CLIENT_ID=$$DISCORD_CLIENT_ID --build-arg DISCORD_CLIENT_SECRET=$$DISCORD_CLIENT_SECRET --build-arg NEXTAUTH_SECRET=$$NEXTAUTH_SECRET --build-arg NEXTAUTH_URL=34.163.60.46 .
 
     secretEnv:
       [
