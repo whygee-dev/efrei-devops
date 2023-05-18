@@ -13,6 +13,13 @@ steps:
         "DISCORD_CLIENT_SECRET",
         "NEXTAUTH_SECRET",
       ]
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=kubernetes.yml
+      - --image=europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app
+      - --location=europe-west9
+      - --cluster=k8s-cluster
 
 availableSecrets:
   secretManager:
