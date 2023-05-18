@@ -68,7 +68,7 @@ module "discord_client_id" {
 
   region              = var.region
 
-  secret_name           = "discord_client_id"
+  secret_name           = "DISCORD_CLIENT_ID"
   secret_value          = var.discord_client_id
 }
 
@@ -77,7 +77,7 @@ module "discord_client_secret" {
 
   region              = var.region
 
-  secret_name           = "discord_client_secret"
+  secret_name           = "DISCORD_CLIENT_SECRET"
   secret_value          = var.discord_client_secret
 }
 
@@ -86,7 +86,7 @@ module "nextauth_secret" {
 
   region              = var.region
 
-  secret_name           = "nextauth_secret"
+  secret_name           = "NEXTAUTH_SECRET"
   secret_value          = var.nextauth_secret
 }
 
@@ -95,7 +95,7 @@ module "database_url" {
 
   region                = var.region
 
-  secret_name           = "database_url"
+  secret_name           = "DATABASE_URL"
   secret_value          = var.database_url
 }
 
