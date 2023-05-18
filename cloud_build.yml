@@ -1,0 +1,11 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app",
+        ".",
+      ]
+  - images:
+      - europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app

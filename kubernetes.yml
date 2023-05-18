@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: t3-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      t3-app: web
+  template:
+    metadata:
+      labels:
+        t3-app: web
+    spec:
+      containers:
+        - name: t3-app
+          image: europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: t3-app
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    t3-app: web
+  ports:
+    - port: 80
+      targetPort: 3000

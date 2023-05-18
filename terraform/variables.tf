@@ -1,9 +1,23 @@
-variable "location" {
+variable "region" {
   type        = string
-  description = "The Azure location where all resources in this example should be created"
 }
 
-variable "prefix" {
+variable "project" {
   type        = string
-  description = "The prefix used for all resources in this example"
+}
+
+variable "discord_client_id" {
+  type        = string
+}
+
+variable "discord_client_secret" {
+  type        = string
+}
+
+variable "nextauth_secret" {
+  type        = string
+}
+
+variable "database_url" {
+  type        = string
 }
