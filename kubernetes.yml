@@ -32,3 +32,16 @@ spec:
   ports:
     - port: 80
       targetPort: 3000
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: t3-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: t3-app
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
