@@ -69,3 +69,19 @@ module "container_registry" {
 
   location             = var.region
 }
+
+module "cloudbuild_trigger" {
+  source              = "memes/cloudbuild/google//modules/github"
+
+  version             = "1.0.0"
+  source_repo         = var.github_repo
+  name                = var.trigger_name
+  project_id          = var.project
+
+  trigger_config = {
+    branch_regex     = var.github_branch
+    tag_regex       = null
+    comment_control = null
+    is_pr_trigger   = false
+  }
+}

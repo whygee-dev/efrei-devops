@@ -21,3 +21,16 @@ variable "nextauth_secret" {
 variable "database_url" {
   type        = string
 }
+
+variable "trigger_name" {
+    type = string
+}
+
+variable "github_repo" {
+    type = string
+}
+
+variable "github_branch" {
+    type = string
+    default = "^master$"
+}
