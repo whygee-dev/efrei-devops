@@ -34,3 +34,7 @@ variable "github_branch" {
     type = string
     default = "^master$"
 }
+
+variable "cloudbuild_filename" {
+    type = string
+}

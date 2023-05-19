@@ -77,6 +77,7 @@ module "cloudbuild_trigger" {
   source_repo         = var.github_repo
   name                = var.trigger_name
   project_id          = var.project
+  filename            = var.cloudbuild_filename
 
   trigger_config = {
     branch_regex     = var.github_branch
