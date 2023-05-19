@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        DATABASE_URL: file:./db.sqlite
+        DATABASE_URL: file:./prisma/db.sqlite
         DISCORD_CLIENT_ID: 1105922368397914272
         DISCORD_CLIENT_SECRET: 8c73Zem-N3AOK7jSiWEdnVgVhc6lFVdK
         NEXTAUTH_SECRET: KIZ69KNJSdXXEbMw6xCjPNLlPQXxBhUKbkPyDFXGNeo=
