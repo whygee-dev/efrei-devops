@@ -10,7 +10,7 @@ services:
         DISCORD_CLIENT_ID: 1105922368397914272
         DISCORD_CLIENT_SECRET: 8c73Zem-N3AOK7jSiWEdnVgVhc6lFVdK
         NEXTAUTH_SECRET: KIZ69KNJSdXXEbMw6xCjPNLlPQXxBhUKbkPyDFXGNeo=
-        NEXTAUTH_URL: http://34.163.247.234
+        NEXTAUTH_URL: http://localhost:3000
 
     working_dir: /app
     ports:
