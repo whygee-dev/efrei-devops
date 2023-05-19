@@ -6,14 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_CLIENTVAR: ""
+        DATABASE_URL: file:./db.sqlite
+        DISCORD_CLIENT_ID: 1105922368397914272
+        DISCORD_CLIENT_SECRET: 8c73Zem-N3AOK7jSiWEdnVgVhc6lFVdK
+        NEXTAUTH_SECRET: KIZ69KNJSdXXEbMw6xCjPNLlPQXxBhUKbkPyDFXGNeo=
+        NEXTAUTH_URL: http://34.163.247.234
+
     working_dir: /app
     ports:
       - "3000:3000"
     image: t3-app
-    environment:
-      - DATABASE_URL=file:./db.sqlite
-      - DISCORD_CLIENT_ID=1105922368397914272
-      - DISCORD_CLIENT_SECRET=8c73Zem-N3AOK7jSiWEdnVgVhc6lFVdK
-      - NEXTAUTH_SECRET=KIZ69KNJSdXXEbMw6xCjPNLlPQXxBhUKbkPyDFXGNeo=
-      - NEXTAUTH_URL=http://localhost:3000
