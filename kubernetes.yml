@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: t3-app
+          imagePullPolicy: Always
           image: europe-west9-docker.pkg.dev/efrei-project-devops/efrei-devops/t3-app
           ports:
             - containerPort: 3000
