@@ -6,6 +6,10 @@ variable "project" {
   type        = string
 }
 
+variable "project_number" {
+  type        = string
+}
+
 variable "discord_client_id" {
   type        = string
 }

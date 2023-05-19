@@ -10,3 +10,6 @@ variable "secret_value" {
   type        = string
 }
 
+variable "project_number" {
+  type        = string
+}

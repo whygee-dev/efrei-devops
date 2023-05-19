@@ -14,7 +14,7 @@ data "google_iam_policy" "admin" {
   binding {
     role = "roles/secretmanager.secretAccessor"
     members = [
-      "serviceAccount:292481049315@cloudbuild.gserviceaccount.com",
+      "serviceAccount:${var.project_number}@cloudbuild.gserviceaccount.com",
     ]
   }
 }

@@ -30,7 +30,8 @@ module "k8s" {
 module "discord_client_id" {
   source                = "./modules/secret_manager"
 
-  region              = var.region
+  region                = var.region
+  project_number        = var.project_number
 
   secret_name           = "DISCORD_CLIENT_ID"
   secret_value          = var.discord_client_id
@@ -39,7 +40,8 @@ module "discord_client_id" {
 module "discord_client_secret" {
   source                = "./modules/secret_manager"
 
-  region              = var.region
+  region                = var.region
+  project_number        = var.project_number
 
   secret_name           = "DISCORD_CLIENT_SECRET"
   secret_value          = var.discord_client_secret
@@ -48,7 +50,8 @@ module "discord_client_secret" {
 module "nextauth_secret" {
   source                = "./modules/secret_manager"
 
-  region              = var.region
+  region                = var.region
+  project_number        = var.project_number
 
   secret_name           = "NEXTAUTH_SECRET"
   secret_value          = var.nextauth_secret
@@ -58,6 +61,7 @@ module "database_url" {
   source                = "./modules/secret_manager"
 
   region                = var.region
+  project_number        = var.project_number
 
   secret_name           = "DATABASE_URL"
   secret_value          = var.database_url
