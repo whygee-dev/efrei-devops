@@ -11,56 +11,20 @@ provider "google" {
   region      = var.region
 }
 
-# VPC
-resource "google_compute_network" "vpc" {
-  name                    = "${var.project}-vpc"
-  auto_create_subnetworks = "false"
+module "network" {
+  source               = "./modules/network"
+
+  region               = var.region
+  project              = var.project
 }
 
-# Subnet
-resource "google_compute_subnetwork" "subnet" {
-  name          = "${var.project}-subnet"
-  region        = var.region
-  network       = google_compute_network.vpc.name
-  ip_cidr_range = "10.10.0.0/24"
-}
+module "k8s" {
+  source               = "./modules/k8s"
 
-resource "google_container_cluster" "primary" {
-  name     = "k8s-cluster"
-  location = var.region
-
-  remove_default_node_pool = true
-  initial_node_count       = 1
-
-  network    = google_compute_network.vpc.name
-  subnetwork = google_compute_subnetwork.subnet.name
-}
-
-resource "google_container_node_pool" "primary_preemptible_nodes" {
-  name       = "k8s-pool"
-  location   = var.region
-  cluster    = google_container_cluster.primary.name
-  initial_node_count = 1
-
-  node_config {
-    preemptible  = true
-    machine_type = "e2-small"
-
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-      "https://www.googleapis.com/auth/cloud-platform",
-    ]
-
-    metadata = {
-      disable-legacy-endpoints = "true"
-    }
-  }
-
-  autoscaling {
-    min_node_count = 1
-    max_node_count = 3
-  }
+  region               = var.region
+  project              = var.project
+  network_name         = module.network.net_name
+  subnet_name          = module.network.subnet_name
 }
 
 module "discord_client_id" {
