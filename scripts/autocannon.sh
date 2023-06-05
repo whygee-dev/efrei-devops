@@ -1,1 +1,1 @@
-yarn autocannon -c 100 -d 360 http://34.163.247.234/
+yarn autocannon -c 200 -d 360 http://34.163.247.234/
